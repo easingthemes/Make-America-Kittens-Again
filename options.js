@@ -5,13 +5,17 @@ function save_options() {
   var blockPence = document.getElementById('blockpence').checked;
   var blockFarage = document.getElementById('blockfarage').checked;
   var blockLePen = document.getElementById('blocklepen').checked; 
-  var blockWilders = document.getElementById('blockwilders').checked; 
+  var blockWilders = document.getElementById('blockwilders').checked;
+  var blockVucic = document.getElementById('blockvucic').checked;
+  var blockKolinda = document.getElementById('blockkolinda').checked;
   
   chrome.storage.local.set({
     blockPence: blockPence,
     blockFarage: blockFarage,
     blockLePen: blockLePen,
-    blockWilders: blockWilders
+    blockWilders: blockWilders,
+    blockVucic: blockVucic,
+    blockKolinda: blockKolinda
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -31,12 +35,16 @@ function restore_options() {
     blockPence: false,
     blockFarage: false,
     blockLePen: false,
-    blockWilders: false
+    blockWilders: false,
+    blockVucic: false,
+    blockKolinda: false
   }, function(items) {
     document.getElementById('blockpence').checked = items.blockPence;
     document.getElementById('blockfarage').checked = items.blockFarage;
     document.getElementById('blocklepen').checked = items.blockLePen;
     document.getElementById('blockwilders').checked = items.blockWilders;
+    document.getElementById('blockvucic').checked = items.blockVucic;
+    document.getElementById('blockkolinda').checked = items.blockKolinda;
   });
 }
 
