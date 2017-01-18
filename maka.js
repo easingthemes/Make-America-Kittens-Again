@@ -27,7 +27,9 @@ chrome.storage.local.get({
     blockPence: false,
     blockFarage: false,
     blockLePen: false,
-    blockWilders: false
+    blockWilders: false,
+	blockVucic: false,
+	blockKolinda: false
   }, function(items) { 
 	  if (items.blockPence){
 		  blacklist.push("mike pence");
@@ -40,6 +42,18 @@ chrome.storage.local.get({
 	  };
 	  if (items.blockWilders){
 		  blacklist.push("wilders");
+	  };
+	if (items.blockVucic){
+		  blacklist.push("vucic");
+		blacklist.push("vučić");
+		blacklist.push("вучић");
+	  };
+	if (items.blockKolinda){
+		  blacklist.push("kolinda");
+		blacklist.push("колинда");
+		blacklist.push("grabar-kitarovic");
+		blacklist.push("grabar-kitarović");
+		blacklist.push("grabar");
 	  };
 	  
 	  document.addEventListener('DOMContentLoaded', makanow(theKittens), false);
